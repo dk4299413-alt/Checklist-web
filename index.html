@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#111827">
+  <title>CheckList — Simple Task Manager</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">PERSONAL PRODUCTIVITY</p>
+        <h1>Check<span>List</span></h1>
+      </div>
+      <button id="clearCompleted" class="ghost-btn" type="button">Clear completed</button>
+    </header>
+
+    <section class="hero">
+      <div>
+        <h2>Get things done.</h2>
+        <p>Add tasks, check them off, and keep your day organized.</p>
+      </div>
+      <div class="progress-card">
+        <div class="progress-ring"><span id="progressPercent">0%</span></div>
+        <div>
+          <strong id="progressText">0 of 0 done</strong>
+          <small>Today's progress</small>
+        </div>
+      </div>
+    </section>
+
+    <section class="add-card">
+      <input id="taskInput" type="text" maxlength="120" placeholder="What needs to be done?" autocomplete="off">
+      <select id="prioritySelect" aria-label="Task priority">
+        <option value="low">Low</option>
+        <option value="medium" selected>Medium</option>
+        <option value="high">High</option>
+      </select>
+      <button id="addTask" class="add-btn" type="button">+ Add task</button>
+    </section>
+
+    <nav class="filters" aria-label="Task filters">
+      <button class="filter active" data-filter="all">All <b id="allCount">0</b></button>
+      <button class="filter" data-filter="active">Active <b id="activeCount">0</b></button>
+      <button class="filter" data-filter="completed">Completed <b id="completedCount">0</b></button>
+    </nav>
+
+    <section id="taskList" class="task-list"></section>
+
+    <div id="emptyState" class="empty-state">
+      <div class="empty-icon">✓</div>
+      <h3 id="emptyTitle">No tasks yet</h3>
+      <p id="emptyText">Add your first task above and start checking things off.</p>
+    </div>
+
+    <footer>
+      <span id="taskSummary">0 tasks</span>
+      <button id="clearAll" type="button">Delete all</button>
+    </footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
